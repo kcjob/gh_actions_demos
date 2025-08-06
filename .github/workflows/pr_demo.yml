@@ -3,6 +3,15 @@ name: pull request demo
 
 on:
   workflow_dispatch:
+    inputs:
+      name:
+        # Friendly description to be shown in the UI instead of 'name'
+        description: 'Your Name'
+        # Default value if no value is explicitly provided
+        default: 'Joe Bloggs'
+        # Input has to be provided for the workflow to run
+        required: true
+        type: string
 
 jobs:
   pull-request:
@@ -13,13 +22,13 @@ jobs:
     #     working-directory: my-project
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+      # - name: Checkout code
+      #   uses: actions/checkout@v2
 
-      - name: Set up Python
-        uses: actions/setup-python@v5 
-        with:
-          python-version: '3.12.8'
+      # - name: Set up Python
+      #   uses: actions/setup-python@v5 
+      #   with:
+      #     python-version: '3.12.8'
 
       - name: Print Hello World
         run: echo "Hello, world!"
