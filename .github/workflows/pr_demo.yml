@@ -1,0 +1,24 @@
+#name of YAML files
+name: pull request demo
+
+on:
+  workflow_dispatch:
+
+jobs:
+  pull-request:
+    runs-on: ubuntu-lastest
+   
+    defaults:
+      working-directory: my-project
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v5 
+        with:
+          python-version: '3.12.8'
+
+      - name: Print Hello World
+        run: echo "Hello, world!"
