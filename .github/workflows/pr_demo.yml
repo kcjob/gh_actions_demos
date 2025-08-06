@@ -8,18 +8,19 @@ jobs:
   pull-request:
     runs-on: ubuntu-lastest
    
-    defaults:
-      run:
-        working-directory: my-project
+    # defaults:
+    #   run:
+    #     working-directory: my-project
 
     steps:
-    #   - name: Checkout code
-    #     uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-    #   - name: Set up Python
-    #     uses: actions/setup-python@v5 
-    #     with:
-    #       python-version: '3.12.8'
+      - name: Set up Python
+        uses: actions/setup-python@v5 
+        with:
+          python-version: '3.12.8'
 
       - name: Print Hello World
         run: echo "Hello, world!"
+ 
