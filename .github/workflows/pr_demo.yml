@@ -14,14 +14,30 @@ on:
         type: string
 
 jobs:
-  pull-request:
-    runs-on: ubuntu-lastest
+  # This workflow contains a single job called "hello world"
+  Greetings:
+    # The name of the job, which will be displayed in the UI
+    name: Greetings Job
+    # The type of runner that the job will run on, in this case a Linus hosted runner
+    runs-on:
+      - ubuntu-latest
+
+    steps:
+        # Runs a single command using the runners shell
+        - name: Send greeting
+          run: |
+            echo "Hello ${{ github.event.inputs.name }}"
+
+
+# jobs:
+#   pull-request:
+#     runs-on: ubuntu-lastest
    
     # defaults:
     #   run:
     #     working-directory: my-project
 
-    steps:
+    # steps:
       # - name: Checkout code
       #   uses: actions/checkout@v2
 
@@ -30,6 +46,6 @@ jobs:
       #   with:
       #     python-version: '3.12.8'
 
-      - name: Print Hello World
-        run: echo "Hello, world!"
+      # - name: Print Hello World
+      #   run: echo "Hello, world!"
  
