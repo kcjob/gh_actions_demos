@@ -1,75 +1,19 @@
-#name of YAML files
-name: pull request demo
+#Display the name of the workflow
+name: Demo Workflow
 
 on:
   workflow_dispatch:
     inputs:
-      name:
-        # Friendly description to be shown in the UI instead of 'name'
-        description: 'Your Name'
-        # Default value if no value is explicitly provided
-        default: 'Joe Bloggs'
-        # Input has to be provided for the workflow to run
+      exampleInput:
+        description: 'An example input for the workflow'
         required: true
-        type: string
-
-jobs:
-  # This workflow contains a single job called "hello world"
-  Greetings:
-    # The name of the job, which will be displayed in the UI
-    name: Greetings Job
-    # The type of runner that the job will run on, in this case a Linus hosted runner
-    runs-on:
-      - ubuntu-latest
-
-    steps:
-      # Runs a single command using the runners shell
-      - name: Send greeting
-        run: |
-          echo "Hello ${{ github.event.inputs.name }}"
-
-      # - name: UpdatedFile
-      #   run: |
-      #     echo "${{ github.event.inputs.name }}" 
-
-      # - name: Checkout code
-      #   uses: actions/checkout@v4
-      # - name: Install Bats
-      #   run: sudo apt-get update && sudo apt-get install -y bats
-      # - name: Check Bats version
-      #   run: bats -v
-
-      # - name: Print Hello World
-      #   run: echo "Hello, world!"
-      # - name: Checkout code
-      #   uses: actions/checkout@v2
-
-      # - name: Set up Python
-      #   uses: actions/setup-python@v5 
-      #   with:
-      #     python-version: '3.12.8'
-      
-      # - name: Run Python script
-      #   run: python test.py
-
+        default: 'Hello, World!'
         
-# jobs:
-#   pull-request:
-#     runs-on: ubuntu-lastest
-   
-    # defaults:
-    #   run:
-    #     working-directory: my-project
-
-    # steps:
-      # - name: Checkout code
-      #   uses: actions/checkout@v2
-
-      # - name: Set up Python
-      #   uses: actions/setup-python@v5 
-      #   with:
-      #     python-version: '3.12.8'
-
-      # - name: Print Hello World
-      #   run: echo "Hello, world!"
- 
+jobs:
+  demo_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Display input
+        run: echo "The input provided is: ${{ github.event.inputs.exampleInput }}"
