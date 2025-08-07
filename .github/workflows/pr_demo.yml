@@ -51,7 +51,7 @@ jobs:
           python-version: '3.12.8'
       
       - name: Run Python script
-        run: python hello.py
+        run: python test.py
 
         
 # jobs:
