@@ -10,7 +10,8 @@ on:
         default: 'Hello, World!'
         
 jobs:
-  demo_job:
+  demo_job-1:
+    name: job-1
     runs-on: ubuntu-latest
 
     steps:
@@ -21,6 +22,11 @@ jobs:
       - name: Check Bats version
         run: bats -v
 
+  demo_job-2:
+    name: job-2
+    runs-on: ubuntu-latest
+    needs: demo_job-1
+    steps:
       - name: Set up Python
         uses: actions/setup-python@v5 
         with:
