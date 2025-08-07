@@ -33,7 +33,7 @@ jobs:
           python-version: '3.12.8'
       
       - name: Run Python script
-        run: python test.py
+        run: python ../test.py
 
       - name: Display input
         run: |
