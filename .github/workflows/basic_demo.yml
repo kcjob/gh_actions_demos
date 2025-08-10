@@ -16,17 +16,6 @@ on:
         # Input has to be provided for the workflow to run
         required: true
         type: string
-      city:
-        description: "Work Location"
-        required: true
-        default: "Quincy"
-        type: choice
-        options:
-          - New York
-          - North Carolina
-          - Philadelphia
-          - Europe
-          - Asia
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -44,6 +33,5 @@ jobs:
         - name: Send greeting
           run: |
             echo "Hello ${{ github.event.inputs.name }}" 
-            echo "You are working from ${{ github.event.inputs.city }}"
 
       
