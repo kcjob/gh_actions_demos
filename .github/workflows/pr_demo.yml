@@ -24,8 +24,8 @@ jobs:
           committer: GitHub <noreply@github.com>
           author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
           signoff: false
-          branch: pull-request-demo
-          base: devlopment
+          branch: devlopment
+          base: pull-request-demo
           title: 'Update README'
           labels: |
             Update
