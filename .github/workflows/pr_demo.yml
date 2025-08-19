@@ -6,6 +6,7 @@ on:
     types:
       - submitted
 
+
 jobs:
   on-approval:
     if: github.event.review.state == 'approved'
@@ -29,7 +30,7 @@ jobs:
           labels: |
             Update
           body: New info for README file
-          #assignees: kcjob
+          assignees: kcjob
           reviewers: kcjob,chriskjob
 
           draft: false
