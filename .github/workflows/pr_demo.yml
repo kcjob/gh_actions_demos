@@ -15,6 +15,25 @@ jobs:
       - name: Checkout code 
         uses: actions/checkout@v4
 
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v7.0.8
+        with:
+          commit-message: Added additional information
+          committer: GitHub <noreply@github.com>
+          author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
+          signoff: false
+          branch: pull-reuest-demo
+          base: devlopment
+          title: 'Update README'
+          labels: |
+            Update
+          body: New info for README file
+          #assignees: kcjob
+          reviewers: kcjob,chriskjob
+
+          draft: false
+
       - name: Output for Job 1
         run: echo "Hello from Job 1"
 
