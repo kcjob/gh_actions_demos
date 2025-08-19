@@ -2,12 +2,13 @@ name: Pull Request Demo
 
 run-name: ${{ github.actor }} is learning GitHub Auto PR Action 
 on:
-  push:
-    branches:
-      - pull-request-demo
+  pull_request_review:
+    types:
+      - submitted
 
 jobs:
-  create_pr:
+  on-approval:
+    if: github.event.review.state == 'approved'
     runs-on: ubuntu-latest
 
     steps:
@@ -16,3 +17,5 @@ jobs:
 
       - name: Output for Job 1
         run: echo "Hello from Job 1"
+
+
