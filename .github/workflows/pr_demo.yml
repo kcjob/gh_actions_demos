@@ -24,10 +24,10 @@ jobs:
           committer: GitHub <noreply@github.com>
           author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
           signoff: false
-          branch: devlopment
-          base: pull-request-demo
+          branch: pull-request-demo
+          base: devlopment
           title: 'Update README'
-          labels: |
+          labels: |pull-request-demo
             Update
           body: New info for README file
           assignees: kcjob
