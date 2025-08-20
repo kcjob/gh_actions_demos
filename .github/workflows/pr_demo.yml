@@ -20,7 +20,7 @@ jobs:
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v7.0.8
         with:
-          commit-message: Added additional information
+          commit-message: Added additional information 
           committer: GitHub <noreply@github.com>
           author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
           signoff: false
