@@ -2,6 +2,10 @@ name: Pull Request Demo
 
 run-name: ${{ github.actor }} is learning GitHub Auto PR Action 
 on:
+    push:
+      branches:
+        - pull-request-demo
+
   pull_request_review:
     types:
       - submitted
