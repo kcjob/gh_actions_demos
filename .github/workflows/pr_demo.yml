@@ -24,6 +24,7 @@ jobs:
           committer: GitHub <noreply@github.com>
           author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
           signoff: false
+          sign-commits: false
           branch: pull-request-demo
           base: devlopment
           title: 'Update README'
